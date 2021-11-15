@@ -29,6 +29,14 @@ public class ProductModel {
         }
     }
 
+    public static List<Product> findByCatId(int catId) {
+        final String query = "select * from products where CatID = :CatID";
+        try (Connection con = DbUtills.getConnection()) {
+            return con.createQuery(query)
+                    .addParameter("CatID", catId)
+                    .executeAndFetch(Product.class);
+        }
+    }
 
     public static void add (Product p) {
         String sql = "INSERT INTO products ( ProName, TinyDes, FullDes, Price, CatID, Quantity) VALUES (:proname,:tinydes,:fulldes,:price,:catid,:quantity)";

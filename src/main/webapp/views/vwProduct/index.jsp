@@ -12,7 +12,7 @@
                 Categories
                 <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/Admin/Product/Add" role="button">
                     <i class="fa fa-plus" aria-hidden="true"></i>
-                    Add Product #1
+                    Add Product (Admin)
                 </a>
             </h4>
             <c:choose>
